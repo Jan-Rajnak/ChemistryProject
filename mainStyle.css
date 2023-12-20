@@ -2,3 +2,29 @@ body {
     background: #101318;
     text-shadow: 0 0 0.4vw currentColor;
 }
+
+header {
+    text-align: right;
+    padding: 50px 20px 0 0;
+}
+
+header nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 150%;
+    margin-right: 27px;
+    padding: 10px;
+    width: 5.555555%;
+}
+
+header nav a.active {
+    color: darkgray;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+header nav a:hover {
+    color: grey;
+    text-shadow: white;
+}
