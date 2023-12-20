@@ -5,16 +5,23 @@ body {
 
 header {
     text-align: right;
-    padding: 50px 20px 0 0;
+    padding-top: 50px;
 }
 
 header nav a {
     text-decoration: none;
     color: white;
     font-size: 150%;
-    margin-right: 27px;
     padding: 10px;
-    width: 5.555555%;
+    border: gray solid 2px;
+    margin: -2px;
+    display: inline-block;
+    width: 7%;
+    text-align: center;
+}
+
+.rightNavA {
+    margin-right: 38px;
 }
 
 header nav a.active {
