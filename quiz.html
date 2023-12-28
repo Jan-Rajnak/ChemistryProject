@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <title>Kviz</title>
     <link rel="stylesheet" href="mainStyle.css">
+    <link rel="stylesheet" href="quiz.css">
 </head>
 
-<header style="text-shadow: none; color: white" >
+<header style="text-shadow: none; color: white">
     <nav>
-        <a href="index.html" >Tabuľka</a>
-        <a href="game.html" >Hra</a>
-        <a class="active rightNavA" href="quiz.html" >Kvízy</a>
+        <a href="index.html">Tabuľka</a>
+        <a class="active rightNavA" href="quiz.html">Kvíz</a>
     </nav>
 </header>
 
 <body>
+
+    <label for="numberOfQuestions"> Množstvo otázok na teste (5-50): </label>
+    <input type="number" id="numberOfQuestions" name="numberOfQuestions">
+
+    <button onclick="generateTest()" > Generovat novy test </button>
+
+    <div class="quizContainer">
+
+    </div>
 
 </body>
 </html>
