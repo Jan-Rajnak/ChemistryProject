@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.options-list {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.options-list button {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #101318;
+    color: white;
+    border: white solid 2px;
+}
+
+
+button .selected :hover {
+    background-color: #101318;
+}
