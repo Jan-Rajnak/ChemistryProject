@@ -171,8 +171,8 @@ function handleButtonClick(event) {
     // Add 'selected' class to the clicked button
     clickedButton.classList.add('selected');
     clickedButton.style = " background-color: #101318;\n" +
-        "    color: lightblue;\n" +
-        "    border: lightblue solid 2px;"
+        "    color: blue;\n" +
+        "    border: blue solid 2px;"
 
     // Update the array of selected buttons
     selectedButtons = [...document.querySelectorAll('.selected')];
