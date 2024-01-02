@@ -138,6 +138,8 @@ const quizQuestions = [
         numberOfChoices: 2,
     },
 ];
+let shuffledQuestions;
+
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -147,6 +149,7 @@ function shuffleArray(array) {
 }
 
 let selectedButtons = [];
+let selectedAnswers = [];
 
 function handleButtonClick(event) {
     const clickedButton = event.target;
@@ -168,14 +171,17 @@ function handleButtonClick(event) {
     // Add 'selected' class to the clicked button
     clickedButton.classList.add('selected');
     clickedButton.style = " background-color: #101318;\n" +
-        "    color: greenyellow;\n" +
-        "    border: greenyellow solid 2px;"
+        "    color: lightblue;\n" +
+        "    border: lightblue solid 2px;"
 
     // Update the array of selected buttons
     selectedButtons = [...document.querySelectorAll('.selected')];
 
-    console.log('Selected Buttons:', selectedButtons.map(button => button.textContent));
+    selectedAnswers = selectedButtons.map(button => button.textContent.charAt(0));
 }
+
+
+let rightAnswersInOrder = "";
 
 function generateTest() {
     let numberOfQuestions = document.getElementById('numberOfQuestions').value;
@@ -184,6 +190,7 @@ function generateTest() {
 
     let quizContainer = document.getElementById('quizContainer');
     quizContainer.innerHTML = ""; // Clear previous content
+
 
     for (let i = 0; i < numberOfQuestions; i++) {
         let question = shuffledQuestions[i];
@@ -221,16 +228,35 @@ function generateTest() {
 
         // Append the question container to the quiz container
         quizContainer.appendChild(questionContainer);
+
+        rightAnswersInOrder = rightAnswersInOrder + question.correctAnswer;
     }
+
+    console.log(rightAnswersInOrder);
+
 }
 
 // Initial generation on page load
 generateTest();
 
 function evaluateTest() {
-    if (selectedButton) {
-        console.log('Accessed Externally:', selectedButton.textContent);
+    if (selectedButtons) {
+        console.log(selectedAnswers);
     } else {
         console.log('No button selected yet.');
     }
+
+    for (let i = 0; i < selectedButtons.length; i++) {
+        if (selectedButtons[i].textContent.charAt(0) === rightAnswersInOrder.charAt(i)) {
+            selectedButtons[i].style = "background-color : green"
+        } else {
+            selectedButtons[i].style = "padding: 10px;\n" +
+                "    margin: 5px;\n" +
+                "    cursor: pointer;\n" +
+                "    background-color: red;\n" +
+                "    color: white;\n" +
+                "    border: white solid 2px;"
+        }
+    }
+
 }
