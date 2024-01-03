@@ -18,9 +18,11 @@ body {
 }
 
 
-button:hover {
-    color: lightblue;
-    border: 2px solid lightblue;
+button:hover,
+button.hover {
+    color: greenyellow;
+    border: 2px solid greenyellow;
+    transition: 200ms;
 }
 
 #evaluateTest {
@@ -29,7 +31,7 @@ button:hover {
     background-color: #101318;
     padding-right: 15px;
     font-size: 20px;
-    margin: 10px 0 100px 250px;
+    margin: 10px 0 100px 150px;
     height: 80px;
     width: 200px;
 }
@@ -42,4 +44,49 @@ button:hover {
 
 #quizContainer {
     padding: 50px;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0;
+}
+
+#numberOfQuestions{
+    color: white;
+    background-color: #101318;
+    font-size: 20px;
+    width: 3%;
+    padding: 5px;
+    height: 20px;
+    text-align: center;
+    text-shadow: 0 0 0.4vw currentColor;
+    border: 1px grey solid;
+}
+
+#numberOfQuestions:focus {
+    border: yellowgreen 1px solid;
+    outline: none;
+}
+
+#numberOfQuestions:hover {
+    border: yellowgreen 1px solid;
+}
+
+#generateTestBtn {
+    height: 35px;
+    width: 8%;
+    font-size: 15px;
+    margin: 5px;
+    background-color: #101318FF;
+    color: white;
+    border: 2px white solid;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+#generateTestBtn:hover,
+#generateTestBtn:focus {
+    color: yellowgreen;
+    border-color: yellowgreen;
 }

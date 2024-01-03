@@ -138,8 +138,7 @@ const quizQuestions = [
         numberOfChoices: 2,
     },
 ];
-let shuffledQuestions;
-
+document.getElementById("numberOfQuestions").value = 5;
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -171,8 +170,9 @@ function handleButtonClick(event) {
     // Add 'selected' class to the clicked button
     clickedButton.classList.add('selected');
     clickedButton.style = " background-color: #101318;\n" +
-        "    color: blue;\n" +
-        "    border: blue solid 2px;"
+        "color: greenyellow;\n" +
+        "    border: 2px solid greenyellow;\n" +
+        "    transition: 200ms;"
 
     // Update the array of selected buttons
     selectedButtons = [...document.querySelectorAll('.selected')];
@@ -184,6 +184,7 @@ function handleButtonClick(event) {
 let rightAnswersInOrder = "";
 
 function generateTest() {
+    rightAnswersInOrder = "";
     let numberOfQuestions = document.getElementById('numberOfQuestions').value;
     let shuffledQuestions = [...quizQuestions];
     shuffleArray(shuffledQuestions);
@@ -233,6 +234,10 @@ function generateTest() {
     }
 
     console.log(rightAnswersInOrder);
+
+    if (numberOfQuestions !== ""){
+        document.getElementById('evaluateTest').style = "display: block";
+    }
 
 }
 
